@@ -14,7 +14,7 @@ public class SaperButton extends JButton implements ActionListener {
 
 	private int buttonId;
 	private SaperGame bombs;
-	
+
 	private boolean checked = false;
 
 	public SaperButton(int buttonId, SaperGame bombs) {
@@ -39,14 +39,12 @@ public class SaperButton extends JButton implements ActionListener {
 			System.out.println("Set icon exception: " + e);
 		}
 	}
-	
-	public void setChcecked(boolean checked)
-	{
+
+	public void setChcecked(boolean checked) {
 		this.checked = checked;
 	}
-	
-	public boolean isChcecked()
-	{
+
+	public boolean isChcecked() {
 		return checked;
 	}
 

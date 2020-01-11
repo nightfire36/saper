@@ -9,8 +9,6 @@ import java.util.List;
 
 public class Window extends JFrame {
 
-	
-	
 	public Window() {
 		super("Saper");
 	}

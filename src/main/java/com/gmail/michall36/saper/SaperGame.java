@@ -11,9 +11,9 @@ public class SaperGame {
 	public static final int HEIGHT = 5;
 	public static final int WIDTH = 5;
 	public static final int BOMBS_NUMBER = 5;
-	
+
 	private List<SaperButton> buttons;
-	
+
 	private int[] poolsWithBombs = new int[BOMBS_NUMBER];
 	private boolean isGameOver = false;
 	private int poolsCheckedNumber = 0;
@@ -87,7 +87,7 @@ public class SaperGame {
 		}
 		return bombsAround;
 	}
-	
+
 	public void revealBombsAround(int poolId) {
 		if (poolId % WIDTH != 0) {
 			revealPool(poolId - 1);
@@ -114,12 +114,10 @@ public class SaperGame {
 			revealPool(poolId + WIDTH);
 		}
 	}
-	
-	public void revealPool(int poolId)
-	{
+
+	public void revealPool(int poolId) {
 		SaperButton button = this.buttons.get(poolId);
-		if(!button.isChcecked())
-		{
+		if (!button.isChcecked()) {
 			if (contains(poolId)) {
 				button.setButtonIcon();
 				gameOver();
@@ -127,10 +125,9 @@ public class SaperGame {
 				button.setEnabled(false);
 				button.setChcecked(true);
 				int bombsAround = getBombsAround(poolId);
-				if(bombsAround > 0) {
+				if (bombsAround > 0) {
 					button.setText(String.valueOf(bombsAround));
-				}
-				else {
+				} else {
 					revealBombsAround(poolId);
 				}
 				this.poolsCheckedNumber++;
